@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/word_list_nav_graph"
+    app:startDestination="@id/letterListFragment">
+
+    <fragment
+        android:id="@+id/letterListFragment"
+        android:name="com.example.wordlist.fragment.LetterListFragment"
+        android:label="Words"
+        tools:layout="@layout/fragment_letter_list">
+        <action
+            android:id="@+id/action_letterListFragment_to_wordListFragment"
+            app:destination="@id/wordListFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordListFragment"
+        android:name="com.example.wordlist.fragment.WordListFragment"
+        android:label="@string/word_list_fragment_label"
+        tools:layout="@layout/fragment_word_list">
+        <argument
+            android:name="letter"
+            app:argType="string" />
+    </fragment>
+</navigation>

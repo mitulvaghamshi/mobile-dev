@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "firebase: start emulators",
+        "command": "firebase emulators:start"
+      },
+      {
+        "type": "shell",
+        "label": "flutter build web",
+        "command": "flutter build web"
+      }
+    ]
+  }
+}

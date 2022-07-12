@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="author" content="Mitul Vaghamshi">
+  <meta name="image" content="https://mitulvaghamshi.github.io/img/picture.webp">
+  <meta name="description" content="Personal portfolio app built with Flutter3/Dart">
+  <!-- Facebook Card -->
+  <meta property="og:title" content="Mitul Vaghamshi - Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mitulvaghamshi.github.io" />
+  <meta property="og:image" content="https://mitulvaghamshi.github.io/img/picture.webp" />
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:description" content="Personal portfolio app built with Flutter3/Dart" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@mitulvaghamshi">
+  <meta name="twitter:title" content="Mitul Vaghamshi - Portfolio">
+  <meta name="twitter:description" content="Personal portfolio app built with Flutter3/Dart">
+  <meta name="twitter:image" content="https://mitulvaghamshi.github.io/img/picture.webp">
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Portfolio">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
+  <link rel="apple-touch-icon" type="image/webp" href="https://mitulvaghamshi.github.io/img/logo.webp">
+  <link rel="shortcut icon" type="image/webp" href="https://mitulvaghamshi.github.io/img/logo.webp">
+  <!-- Favicon -->
+  <link rel="canonical" href="https://mitulvaghamshi.github.io" />
+  <link rel="manifest" href="manifest.json" />
+  <title>Mitul Vaghamshi - Portfolio</title>
+  <style>
+    body {
+      inset: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      position: fixed;
+    }
+
+    #loading {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      width: 100%;
+    }
+
+    #loading img {
+      animation: 1s ease-in-out 0s infinite alternate breathe;
+      opacity: .66;
+      transition: opacity .4s;
+    }
+
+    #loading.main_done img {
+      opacity: 1;
+    }
+
+    #loading.init_done img {
+      animation: .33s ease-in-out 0s 1 forwards zooooom;
+      opacity: .05;
+    }
+
+    @keyframes breathe {
+      from {
+        transform: scale(1)
+      }
+
+      to {
+        transform: scale(0.95)
+      }
+    }
+
+    @keyframes zooooom {
+      from {
+        transform: scale(1)
+      }
+
+      to {
+        transform: scale(10)
+      }
+    }
+  </style>
+  <script>
+    var serviceWorkerVersion = null;
+  </script>
+  <script src="flutter.js" defer></script>
+</head>
+
+<body>
+  <div id="loading">
+    <img src="img/logo.webp" alt="Loading indicator..." />
+  </div>
+  <script>
+    window.addEventListener('load', function (ev) {
+      var loading = document.querySelector('#loading');
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: { serviceWorkerVersion: serviceWorkerVersion, }
+      }).then(function (engineInitializer) {
+        loading.classList.add('main_done');
+        return engineInitializer.initializeEngine();
+      }).then(function (appRunner) {
+        loading.classList.add('init_done');
+        return appRunner.runApp();
+      }).then(app => {
+        window.setTimeout(() => loading.remove(), 500);
+      });
+    });
+  </script>
+</body>
+
+</html>

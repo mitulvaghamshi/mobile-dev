@@ -1,0 +1,94 @@
+name: build
+on:
+  workflow_dispatch:
+  inputs:
+      version:
+        description: 'App version'
+        required: true
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+      - name: Build Flutter Web
+        working-directory: .
+        run: |
+          flutter pub get
+          flutter build web
+  ios:
+    runs-on: macos-latest
+    steps:
+      - name: List all simulators
+        run: "xcrun instruments -s"
+      - name: Start Simulator
+        run: |
+          UDID=$(xcrun instruments -s | grep "iPhone" | sed -n 1p | awk -F ' *[][]' '{ print $2 }')
+          echo "Using simulator $UUID"
+          xcrun simctl boot "${UDID:?No Simulator with this name iPhone found}"
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+      - name: Example App - Build iOS
+        working-directory: .
+        run: |
+          flutter pub get
+          flutter build ios --release --no-codesign
+      - name: Run Flutter Driver tests
+        working-directory: .
+        run: "flutter drive --target=test_driver/app.dart"
+  android:
+    runs-on: macos-latest
+    steps:
+      - uses: malinskiy/action-android/install-sdk@release/0.0.8
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+      - name: Build Android APK
+        working-directory: .
+        run: |
+          flutter pub get
+          flutter build apk
+          flutter build appbundle
+      - name: Upload build outputs (APKs)
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-outputs
+          path: app/build/outputs
+      - name: Upload build reports
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-reports
+          path: app/build/reports
+      - name: Use specific Java version for sdkmanager to work
+        uses: joschi/setup-jdk@v2
+        with:
+          java-version: "openjdk11"
+          architecture: "x64"
+      - name: Download Android Emulator Image
+        run: |
+          echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install "system-images;android-31;google_apis;x64"
+          echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd --force --name emu --device "Nexus 5X" -k 'system-images;android-31;google_apis;x64'
+          $ANDROID_HOME/emulator/emulator -list-avds
+      - name: "Start Android Emulator"
+        timeout-minutes: 10
+        run: |
+          echo "Starting emulator"
+          ls "$ANDROID_HOME/tools/bin/"
+          $ANDROID_HOME/tools/bin/sdkmanager "platform-tools" "platforms;android-31"
+          echo "$ANDROID_HOME/platform-tools"
+          ls "$ANDROID_HOME/"
+          ls "$ANDROID_HOME/platform-tools"
+          nohup $ANDROID_HOME/emulator/emulator -avd emu -no-audio -no-snapshot -no-window &
+          $ANDROID_HOME/platform-tools/adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed | tr -d '\r') ]]; do sleep 1; done; input keyevent 82'
+          $ANDROID_HOME/platform-tools/adb devices
+          echo "Emulator started"
+      - name: "Run Flutter Driver tests"
+        working-directory: .
+        run: "flutter drive --target=test_driver/app.dart"

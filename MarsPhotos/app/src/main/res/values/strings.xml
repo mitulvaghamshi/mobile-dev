@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Mars Photos</string>
+    <string name="mars_image">Mars Image %1$s</string>
+    <string name="mars_api_status">Mars Api Status: %1$s</string>
+</resources>

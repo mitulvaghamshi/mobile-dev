@@ -1,0 +1,57 @@
+name: Deploy to GitHub pages
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Deployment version'
+        default: 'v1.0.0-default'
+        required: true
+      reponame:
+        description: 'Destination repo'
+        default: ''
+        required: true
+      username:
+        description: 'Repo username'
+        default: ''
+        required: true
+      email:
+        description: 'Repo user email'
+        default: ''
+        required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: "${{ github.token }}"
+      PUBLISH_VERSION: "${{ github.event.inputs.version }}"
+      USER_NAME: "${{ github.event.inputs.username }}"
+      EMAIL_ADDRESS: "${{ github.event.inputs.email }}"
+      REPOSITORY: "${{ github.event.inputs.reponame }}"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.0.0'
+          channel: stable
+      - name: Install Dependencies
+        run: flutter pub get
+        working-directory: ./portfolio
+      - name: Build Web
+        run: flutter build web
+        working-directory: ./portfolio
+      - name: "Deploy to ${REPOSITORY}"
+        run: |
+          cd portfolio/build/web
+          git init
+          git config user.name "${USER_NAME}"
+          git config user.email "${EMAIL_ADDRESS}"
+          git remote add secure-origin "https://username:${GITHUB_TOKEN}@github.com/${USER_NAME}/${REPOSITORY}.git"
+          git checkout -b gh-pages
+          git add .
+          git commit -m "Publishing ${PUBLISH_VERSION}"
+          git push --force secure-origin gh-pages
+#       - name: Upload build output
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: Portfolio
+#           path: ./portfolio/build/web

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dankawala</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Dankawala Pan &amp; Cold Point</string>
+    <string name="nav_header_subtitle">mitulvaghmashi@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_login">Welcome to Dankawala</string>
+    <string name="tab_text_1">INCOME</string>
+    <string name="tab_text_2">COST</string>
+</resources>

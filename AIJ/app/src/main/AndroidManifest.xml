@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.mitul.aij">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AIJ">
+        <activity
+            android:name=".SplashScreen.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HomeScreen.DeveloperActivity" />
+        <activity android:name=".HomeScreen.CollageListActivity" />
+        <activity android:name=".HomeScreen.DetailCollageActivity" />
+        <activity android:name=".Registration.LoginActivity" />
+        <activity android:name=".Registration.RegisterActivity" />
+        <activity android:name=".HomeScreen.BranchListActivity" />
+        <activity android:name=".Aij.HomeScreenAijActivity" />
+        <activity
+            android:name=".Aij.ContactUs"
+            android:parentActivityName=".Aij.HomeScreenAijActivity" />
+        <activity
+            android:name=".Aij.AijExplorerActivity"
+            android:parentActivityName=".Aij.HomeScreenAijActivity" />
+        <activity android:name=".HomeScreen.UniversityListActivity" />
+        <activity android:name=".HomeScreen.DetailUniversityActivity" />
+        <activity android:name=".HomeScreen.BankBranchListActivity" />
+        <activity android:name=".HomeScreen.HelpCenterListActivity" />
+        <activity android:name=".HomeScreen.HomeScreenActivity" />
+        <activity android:name=".Aij.CourcesActivity" />
+        <activity android:name=".Fragments.MainActivity" />
+    </application>
+</manifest>

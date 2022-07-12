@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/login_form"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="@android:color/white"
+        app:rippleColor="@android:color/white" />
+
+    <AutoCompleteTextView
+        android:id="@+id/login_username"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/row_btn_bg_1"
+        android:drawableStart="@drawable/ic_person"
+        android:hint="Username"
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:textColorHint="@color/color_blue1" />
+
+    <AutoCompleteTextView
+        android:id="@+id/login_password"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/row_btn_bg_1"
+        android:drawableStart="@drawable/ic_lock"
+        android:hint="Password"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textColorHint="@color/color_blue1" />
+
+    <CheckBox
+        android:id="@+id/login_keep_me"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/row_btn_bg_1"
+        android:buttonTint="@color/color_blue1"
+        android:foregroundTint="@color/color_blue1"
+        android:text="Keep me logged in"
+        android:textColor="@color/color_blue1" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/login_progress_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:imeOptions="actionGo"
+        android:src="@drawable/ic_send"
+        android:tint="@android:color/white"
+        app:backgroundTint="@color/color_pink1"
+        app:rippleColor="@android:color/white" />
+</LinearLayout>

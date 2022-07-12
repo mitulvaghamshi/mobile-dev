@@ -1,0 +1,36 @@
+name: sphere
+description: A new Flutter project.
+version: 1.0.0+1
+environment:
+  sdk: '>=2.17.0 <3.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/2k_earth_daymap.jpg
+    - assets/thumb/2k_earth_daymap.jpg
+    - assets/2k_jupiter.jpg
+    - assets/thumb/2k_jupiter.jpg
+    - assets/2k_mars.jpg
+    - assets/thumb/2k_mars.jpg
+    - assets/2k_mercury.jpg
+    - assets/thumb/2k_mercury.jpg
+    - assets/2k_moon.jpg
+    - assets/thumb/2k_moon.jpg
+    - assets/2k_neptune.jpg
+    - assets/thumb/2k_neptune.jpg
+    - assets/2k_saturn.jpg
+    - assets/thumb/2k_saturn.jpg
+    - assets/2k_sun.jpg
+    - assets/thumb/2k_sun.jpg
+    - assets/2k_uranus.jpg
+    - assets/thumb/2k_uranus.jpg
+    - assets/2k_venus_surface.jpg
+    - assets/thumb/2k_venus_surface.jpg
+    - assets/2k_stars.jpg
+    - assets/thumb/2k_stars.jpg
+    - assets/pano_1.jpg
+    - assets/thumb/pano_1.jpg

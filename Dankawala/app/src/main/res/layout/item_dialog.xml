@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <AutoCompleteTextView
+        android:id="@+id/dialog_detail_box_1"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/row_btn_bg_1"
+        android:drawableStart="@drawable/ic_edit"
+        android:singleLine="true"
+        android:textColorHint="@color/color_blue2" />
+
+    <AutoCompleteTextView
+        android:id="@+id/dialog_detail_box_2"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/row_btn_bg_1"
+        android:drawableStart="@drawable/ic_edit"
+        android:singleLine="true"
+        android:textColorHint="@color/color_blue2"
+        android:visibility="gone" />
+
+    <AutoCompleteTextView
+        android:id="@+id/dialog_detail_box_3"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/row_btn_bg_1"
+        android:drawableStart="@drawable/ic_edit"
+        android:singleLine="true"
+        android:textColorHint="@color/color_blue2"
+        android:visibility="gone" />
+
+    <AutoCompleteTextView
+        android:id="@+id/dialog_detail_box_4"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/row_btn_bg_1"
+        android:drawableStart="@drawable/ic_edit"
+        android:singleLine="true"
+        android:textColorHint="@color/color_blue2"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/member_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/row_btn_bg_1"
+        android:dropDownSelector="@drawable/row_btn_bg_2"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/date_change_view"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/row_btn_bg_1"
+        android:drawableStart="@drawable/ic_date_range"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_blue1"
+        android:visibility="gone" />
+</LinearLayout>

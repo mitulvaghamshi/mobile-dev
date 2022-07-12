@@ -1,0 +1,20 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_blue1</item>
+        <item name="colorPrimaryDark">@color/color_blue2</item>
+        <item name="colorAccent">@color/color_blue2</item>
+        <item name="android:navigationBarColor">@color/color_blue2</item>
+    </style>
+
+    <style name="summery_item_textview">
+        <item name="android:layout_width">85dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+</resources>

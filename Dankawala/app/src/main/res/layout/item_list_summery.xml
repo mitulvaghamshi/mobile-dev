@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@android:color/black"
+    android:showDividers="middle">
+
+    <TextView
+        android:id="@+id/text0"
+        style="@style/summery_item_textview"
+        android:layout_width="20dp" />
+
+    <TextView
+        android:id="@+id/text1"
+        style="@style/summery_item_textview"
+        android:layout_width="180dp" />
+
+    <TextView
+        android:id="@+id/text2"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text3"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text4"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text5"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text6"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text7"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text8"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text9"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text10"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text11"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text12"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text13"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text14"
+        style="@style/summery_item_textview" />
+
+    <TextView
+        android:id="@+id/text15"
+        style="@style/summery_item_textview" />
+</LinearLayout>

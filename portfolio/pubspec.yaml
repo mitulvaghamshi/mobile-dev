@@ -1,0 +1,30 @@
+name: portfolio
+description: A new Flutter portfolio project.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.4
+  flutter:
+    sdk: flutter
+  flutter_svg: ^1.0.3
+  http: ^0.13.4
+  url_launcher: ^6.1.2
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Merriweather
+      fonts:
+        - asset: fonts/Merriweather-Regular.ttf
+        - asset: fonts/Merriweather-Bold.ttf
+          weight: 700
+    - family: OpenSans
+      fonts:
+        - asset: fonts/OpenSans-Regular.ttf

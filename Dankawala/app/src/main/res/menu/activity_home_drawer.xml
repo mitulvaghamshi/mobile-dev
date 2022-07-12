@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="Explore it">
+        <menu>
+            <item
+                android:id="@+id/nav_insert_record"
+                android:icon="@drawable/ic_add_record"
+                android:iconTint="@color/color_blue2"
+                android:title="Insert new Record" />
+            <item
+                android:id="@+id/nav_add_shop"
+                android:icon="@drawable/ic_add_shop"
+                android:title="Add new Shop" />
+            <item
+                android:id="@+id/nav_add_partner"
+                android:icon="@drawable/ic_add_partner"
+                android:title="Add new Partner" />
+            <item
+                android:id="@+id/nav_member"
+                android:icon="@drawable/ic_person"
+                android:title="Shop Members" />
+            <item
+                android:id="@+id/nav_summery"
+                android:icon="@drawable/ic_summery"
+                android:title="Show Summery" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/nav_go_user"
+        android:icon="@drawable/ic_person"
+        android:title="User Data" />
+    <item android:title="Databases">
+        <menu>
+            <item
+                android:id="@+id/nav_backup_db"
+                android:icon="@drawable/ic_backup"
+                android:title="Backup Database" />
+            <item
+                android:id="@+id/nav_restore_db"
+                android:icon="@drawable/ic_restore"
+                android:title="Restore Database" />
+        </menu>
+    </item>
+    <item android:title="About">
+        <menu>
+            <item
+                android:id="@+id/nav_about_us"
+                android:icon="@drawable/ic_info"
+                android:title="About Us" />
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_help"
+                android:title="Help" />
+        </menu>
+    </item>
+    <item android:title="Exit">
+        <menu>
+            <item
+                android:id="@+id/nav_restart"
+                android:icon="@drawable/ic_refresh"
+                android:title="Refresh App" />
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/ic_power"
+                android:title="Exit" />
+        </menu>
+    </item>
+</menu>

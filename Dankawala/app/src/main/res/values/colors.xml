@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_blue1">#4C93FF</color>
+    <color name="color_blue2">#1862FA</color>
+    <color name="color_red1">#FF2A20</color>
+    <color name="color_yellow1">#FFC107</color>
+    <color name="color_green1">#1CB122</color>
+    <color name="color_pink1">#E91E63</color>
+    <color name="color_green2">#0C6900</color>
+    <color name="color_list_selector">@color/color_blue1</color>
+    <color name="color_drawable_fill">@color/color_blue1</color>
+</resources>

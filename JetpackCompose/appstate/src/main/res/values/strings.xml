@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">App State</string>
+    <string name="compose_activity">Compose Activity</string>
+    <string name="native_activity">Native Activity</string>
+    <string name="native_activity_with_viewmodel">Native Activity With ViewModel</string>
+</resources>
